@@ -42,4 +42,6 @@ Essas Requisições são acessadas por meio de _Endpoints_, que são as URLs nas
 
 #### Exemplo de Requisições
 
-Existe um programa bem útil chamado **Postman**
+Existe um programa bem útil chamado **Postman** que auxilia para testar as Requisições.
+
+Para saber como usar e testar, vá no [src/postman/README.md](src/../../postman/README.md)

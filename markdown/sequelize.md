@@ -1,0 +1,1 @@
+# Entendo e utilizando o Sequelize
