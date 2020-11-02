@@ -26,13 +26,12 @@
 
 * Com o Postman fazemos requisições HTTP para a API, onde existem os seguintes tipos básicos de Requisições que estarão configuradas na API RESTful que estamos testando:
 
-<img src="../../images/postman/get-postman.png"> = o Postman vai pegar da API os dados solicitados do banco de dados pela url configurada e vai retornar esses dados em um Formato JSON.
-
-<img src="../../images/postman/post-postman.png"> = Podemos criar pelo Postman um dado que vai ser adicionado ao banco de dados, onde fazemos isso em Formato JSON pelo próprio Postman, depois de colocados os dados necessários, enviamos o dado pela url configurada para ser adicionado dados ao banco de dados.
-
-<img src="../../images/postman/put-postman.png"> = Com o PUT iremos pegar um dado, normalmente pelo seu ID, e poderemos fazer modificações que quisermos, e depois iremos enviar essas modificações para a url configurada.
-
-<img src="../../images/postman/delete-postman.png"> = Com o DELETE iremos pegar um dado, normalmente pelo seu ID, e iremos deletar ele do Banco de dados permanentemente.
+Requisição|Explicação
+|---|---|
+<img src="../../images/postman/get-postman.png" width="40"> |O Postman vai pegar da API os dados solicitados do banco de dados pela url configurada e vai retornar esses dados em um Formato JSON.
+<img src="../../images/postman/post-postman.png" width="40">|Podemos criar pelo Postman um dado que vai ser adicionado ao banco de dados, onde fazemos isso em Formato JSON pelo próprio Postman, depois de colocados os dados necessários, enviamos o dado pela url configurada para ser adicionado dados ao banco de dados.
+<img src="../../images/postman/put-postman.png" width="40">|Com o PUT iremos pegar um dado, normalmente pelo seu ID, e poderemos fazer modificações que quisermos, e depois iremos enviar essas modificações para a url configurada.
+<img src="../../images/postman/delete-postman.png" width="40">|Com o DELETE iremos pegar um dado, normalmente pelo seu ID, e iremos deletar ele do Banco de dados permanentemente.
 
 ---
 
