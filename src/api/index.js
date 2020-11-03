@@ -1,12 +1,17 @@
 const http = require("http");
+const express = require("express");
 
 const hostname = "127.0.0.1";
 const port = 3000;
 
-const server = http.createServer((req,res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type","text/plain");
-    res.end("Hello World \n");
+const app = express();
+app.set("port",port);
+
+const server = http.createServer(app);
+
+//404
+app.use((request,response,next) => {
+    response.status(404).send('404 - Request not Found!');
 });
 
 server.listen(port,hostname, () => {
