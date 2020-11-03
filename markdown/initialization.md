@@ -16,7 +16,7 @@ src/
 
 * Dentro do Diretório _src/api/_ foi iniciado o Nodejs com o comando no Terminal: `npm init`
 
-<img src="images/init-node.png">
+<img src="../images/init-node.png">
 
 * Foi criado um Arquivo _package.json_ com as informações dos programas extras e dados importantes na hora da configuração apresentado acima.
 
