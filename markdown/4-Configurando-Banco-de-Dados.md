@@ -1,12 +1,10 @@
 <h1>Glossário</h1>
 
-1. [Página Inicial](README).
-2. [O que é uma API](src/api/../../../README.md).
-3. [Criando um Servidor Inicial](initialization).
-4. [Configurando o Express](express.md).
-5. [Configurando o Banco de Dados](banco-de-dados).
-
-
+1. [Página Inicial](../../../README.md).
+2. [O que é uma API](1-O-que-é-uma-api.md).
+3. [Como criar um Servidor Inicial](2-Servidor-Inicial.md).
+4. [Baixando e Configurando o Express](3-Configurando-Express.md).
+5. [Configurando o Sequelize para o Banco de Dados](4-Configurando-Banco-de-Dados.md).
 
 ---
 

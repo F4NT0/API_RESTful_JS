@@ -39,9 +39,3 @@ Essas Requisições são acessadas por meio de _Endpoints_, que são as URLs nas
 1. O método HTTP
 2. Um cabeçalho de requisição, que pode conter informações como dados de autenticação da API, dados da origem da requisição e formato do retorno.
    1. Esse formato de retorno da requisição na maioria das vezes é feito no formato _JSON_ como padrão
-
-#### Exemplo de Requisições
-
-Existe um programa bem útil chamado **Postman** que auxilia para testar as Requisições.
-
-Para saber como usar e testar, vá no [src/postman/README.md](src/../../postman/README.md)
