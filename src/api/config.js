@@ -3,7 +3,7 @@ module.exports = {
         database: {
             host: 'localhost',
             port: 3306,
-            name: 'api',
+            name: 'template-api',
             dialect: 'mysql',
             user: 'root',
             password: 'senha',            

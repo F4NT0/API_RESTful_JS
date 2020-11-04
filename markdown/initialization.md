@@ -8,9 +8,9 @@
 src/
  | ⟶ api/
  |    | ⟶ controllers/
+ |    | ⟶ database/
  |    | ⟶ models/
  |    | ⟶ routes/
- |    | ⟶ sql/
  | ⟶ postman/
 ```
 

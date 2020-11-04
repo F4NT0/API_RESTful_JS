@@ -6,17 +6,16 @@
 src/
  | ⟶ api/
  |    | ⟶ controllers/
+ |    | ⟶ database/
  |    | ⟶ models/
  |    | ⟶ routes/
- |    | ⟶ sql/
  | ⟶ postman/
 ```
 
-<img src="images/folder-review.png">
 
 ### Como Estudar
 
-* Cada Diretório possui um `README.md` que explica e detalha como foi feito essa API e uma das formas de construir uma API RESTful em Javascript.
+* Cada Diretório possui um `README.md` que explica e detalhes como foi feito essa API e uma das formas de construir uma API RESTful em Javascript.
 * A ordem de READMEs são:
 
 1. [Como foi criado o Projeto e o Servidor](markdown/initialization.md)
