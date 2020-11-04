@@ -34,6 +34,8 @@ Data de Modificação|DATE
 
 ### Importando o Necessário
 
+Quando for criar um Model, coloque o nome da Tabela que deseja criar e concatenado coloque _Model_ para sabermos que esse arquivo é um Model que iremos importar, no nosso caso será **clientsModel.js**
+
 A primeira coisa que se deve ser feito é importar o Módulo do Sequelize e o Sequelize do nosso banco de dados:
 
 ```javascript
@@ -50,7 +52,7 @@ const sequelize = require("../database/database");
 
 Para criarmos Models iremos usar a Função do Sequelize chamada `define()` que recebe dois parâmetros:
 
-O primeiro parâmetro é o nome do nosso model, que também é o nome do arquivo, no nosso caso será **clients**.
+O primeiro parâmetro é o nome do nosso model, no nosso caso será **clients**.
 
 O segundo parâmetro é um Objeto com os dados que serão as Colunas na Tabela do banco de dados, que será criada na primeira vez que rodar o programa.
 
