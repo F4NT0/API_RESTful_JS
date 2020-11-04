@@ -20,11 +20,13 @@ src/
 * A ordem de READMEs são:
 
 1. [Como foi criado o Projeto e o Servidor](markdown/initialization.md)
-2. [Diretório src/api/](src/api/README.md)
-3. [Diretório src/api/models/](src/api/models/README.md)
-4. [Diretório src/api/controllers/](src/api/controllers/README.md)
-5. [Diretório src/api/routes/](src/api/routes/README.md)
-6. [Diretório src/postman/](src/postman/README.md)
+2. [Baixando e Configurando o Express](markdown/express.md)
+3. [Configurando e Desenvolvendo o Banco de Dados](markdown/banco-de-dados.md)
+4. [Diretório src/api/](src/api/README.md)
+5. [Diretório src/api/models/](src/api/models/README.md)
+6. [Diretório src/api/controllers/](src/api/controllers/README.md)
+7. [Diretório src/api/routes/](src/api/routes/README.md)
+8. [Diretório src/postman/](src/postman/README.md)
 
 ### Programas utilizados e como instalar
 

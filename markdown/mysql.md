@@ -1,1 +1,2 @@
-# Entendendo e utilizando o MySQL
+# Utilizando o MySQL
+
