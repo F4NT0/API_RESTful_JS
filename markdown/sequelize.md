@@ -1,3 +1,10 @@
+<h1>Glossário</h1>
+
+1. [Página Inicial](https://estudosdofantinho.github.io/API_RESTful_JS/).
+2. [Configurando o Sequelize para o Banco de Dados](4-Configurando-Banco-de-Dados.md).
+
+---
+
 # Entendo e utilizando o Sequelize
 
 ### Instalando Sequelize no Nodejs

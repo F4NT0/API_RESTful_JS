@@ -1,9 +1,19 @@
+<h1>Glossário</h1>
+
+1. [Página Inicial](https://estudosdofantinho.github.io/API_RESTful_JS/).
+2. [O que é uma API](1-O-que-é-uma-api.md).
+3. [Como criar um Servidor Inicial](2-Servidor-Inicial.md).
+4. [Baixando e Configurando o Express](3-Configurando-Express.md).
+5. [Configurando o Sequelize para o Banco de Dados](4-Configurando-Banco-de-Dados.md).
+
+---
+
 # Entendendo e utilizando o Express
 
 ### Instalação
 
-* Para instalar o Express no Nodejs iremos utilizar o **npm** que vem instalado com o Nodejs
-* O seguinte comando no Terminal irá instalar o Express em nosso Projeto
+* Para instalar o [Express](express) no Nodejs iremos utilizar o **npm** que vem instalado com o Nodejs
+* O seguinte comando no Terminal irá instalar o [Express](express) em nosso Projeto
 
 ```shell
 > npm install --save express
@@ -17,13 +27,13 @@
 
 ### O que é
 
-* **Express** é um `Framework` que permite construir aplicações a partir de `Middlewares`
+* [**Express**](express) é um `Framework` que permite construir aplicações a partir de `Middlewares`
   * **Framework** é um Template de Funções que podem ser usados pelo Desenvolvedor em diferentes projetos,onde possui Funções,Classes e Objetos Abstratos para uso em Geral. É útil para não precisar reescrever código sempre que precisa de uma utilização.
   * **Middlewares** é um tipo de Função que está entre um pedido HTTP e a resposta final que o Servidor envia de volta para o cliente. Todos os Métodos dentro de um [Controller]() são Middlewares, funções que retornam um 404 é um Middleware, Função que retorna um Erro.
 
 ### Utilização
 
-* O Express vai nos ajudar a melhorar o Servidor criado [aqui](initialization). Ele vai nos ajudar a tratar com as requisições HTTP em nosso código.
+* O [Express](express) vai nos ajudar a melhorar o Servidor criado [aqui](initialization). Ele vai nos ajudar a tratar com as requisições HTTP em nosso código.
 * Primeira coisa que devemos fazer é importar o Express em nosso Servidor, que fica no arquivo **Index.js** no diretório **src/api/**:
 
 ```javascript
