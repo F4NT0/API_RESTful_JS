@@ -10,6 +10,7 @@
 8. [Criando um Route](7-Criando-um-Route.md).
 9. [Tratamento de Erros Globais](8-Tratamento-de-Erros-Globais.md).
 10. [Conectando o Banco de Dados no Servidor](9-Conectando-Banco-de-Dados.md).
+11. [Testando a API](10-Testando-a-API.md).
 
 ---
 
@@ -156,5 +157,7 @@ sequelize.sync({force: true}).then(() => {
 
 Para mais informações sobre o MySQL, leia essa [PÁGINA](mysql).
 
+# PRÓXIMO PASSO
 
+* [Testando nossa API](10-Testando-a-API.md)
 

@@ -172,6 +172,25 @@ const sequelize = new Sequelize(
 );
 ```
 
-# Próximo Passo
+Após criar o a constante _sequelize_, importe essa constante usando o `module.exports`:
 
-O próximo passo é Construir os **Models**
+```javascript
+const sequelize = new Sequelize(
+    config.database.name,
+    config.database.user,
+    config.database.password,
+    {
+        host: config.database.host,
+        dialect: config.database.dialect
+    }
+);
+
+module.exports = sequelize;
+```
+
+* Dessa forma se tem como pegar essa constante quando formos criar os Models.
+
+
+# PRÓXIMO PASSO
+
+* [Criando os Models](5-Criando-um-Model.md)

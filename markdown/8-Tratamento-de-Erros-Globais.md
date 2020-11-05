@@ -9,6 +9,8 @@
 7. [Criando um Controller](6-Criando-um-Controller.md).
 8. [Criando um Route](7-Criando-um-Route.md).
 9. [Tratamento de Erros Globais](8-Tratamento-de-Erros-Globais.md).
+10. [Conectando o Banco de Dados no Servidor](9-Conectando-Banco-de-Dados.md).
+11. [Testando a API](10-Testando-a-API.md).
 
 ---
 
@@ -49,3 +51,6 @@ app.use((error,request,response,next) => {
 
 * Como não sabemos o tipo de erro que pode surgir, é forçado a saída do erro em JSON para que seja mais fácil de visualizar o erro e poder tratar ele de uma forma mais simples.
 
+# PRÓXIMO PASSO
+
+* [Conectando o Servidor a um Banco de dados](9-Conectando-Banco-de-Dados.md)

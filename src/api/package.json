@@ -4,7 +4,7 @@
   "description": "API Example",
   "main": "index.js",
   "scripts": {
-    "test": "node src/api/index.js"
+    "test": "node index.js"
   },
   "author": "Gabriel Fanto",
   "license": "ISC",

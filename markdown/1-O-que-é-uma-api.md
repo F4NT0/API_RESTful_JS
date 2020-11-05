@@ -7,6 +7,10 @@
 5. [Configurando o Sequelize para o Banco de Dados](4-Configurando-Banco-de-Dados.md).
 6. [Criando um Model](5-Criando-um-Model.md).
 7. [Criando um Controller](6-Criando-um-Controller.md).
+8. [Criando um Route](7-Criando-um-Route.md).
+9. [Tratamento de Erros Globais](8-Tratamento-de-Erros-Globais.md).
+10. [Conectando o Banco de Dados no Servidor](9-Conectando-Banco-de-Dados.md).
+11. [Testando a API](10-Testando-a-API.md).
 
 ---
 
@@ -51,3 +55,7 @@ Essas Requisições são acessadas por meio de _Endpoints_, que são as URLs nas
 1. O método HTTP
 2. Um cabeçalho de requisição, que pode conter informações como dados de autenticação da API, dados da origem da requisição e formato do retorno.
    1. Esse formato de retorno da requisição na maioria das vezes é feito no formato _JSON_ como padrão
+
+# PRÓXIMO PASSO
+
+* [Criando um Servidor Inicial](2-Servidor-Inicial.md)

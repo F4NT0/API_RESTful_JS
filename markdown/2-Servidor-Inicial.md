@@ -7,6 +7,10 @@
 5. [Configurando o Sequelize para o Banco de Dados](4-Configurando-Banco-de-Dados.md).
 6. [Criando um Model](5-Criando-um-Model.md).
 7. [Criando um Controller](6-Criando-um-Controller.md).
+8. [Criando um Route](7-Criando-um-Route.md).
+9. [Tratamento de Erros Globais](8-Tratamento-de-Erros-Globais.md).
+10. [Conectando o Banco de Dados no Servidor](9-Conectando-Banco-de-Dados.md).
+11. [Testando a API](10-Testando-a-API.md).
 
 ---
 
@@ -122,3 +126,7 @@ Pronto, com isso temos um Servidor da API, onde podemos fazer as requisições e
 * Abaixo, foi inciado o servidor e clicado no link, onde podemos ver nosso Hello World no Browser.
 
 <img src="../images/basic-explain/server-test.gif">
+
+# PRÓXIMO PASSO
+
+* [Configurando o Express](3-Configurando-Express.md)
