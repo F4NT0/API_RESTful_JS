@@ -4,11 +4,13 @@
   "description": "API Example",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node src/api/index.js"
   },
   "author": "Gabriel Fanto",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
   }
 }

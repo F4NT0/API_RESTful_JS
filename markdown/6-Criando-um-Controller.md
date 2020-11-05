@@ -68,7 +68,9 @@ O primeiro Middleware que vamos criar é o de Pegar um Cliente do Banco de dados
 
 ---
 
-<h6>findOne</h6>
+<center>
+    <code style="color: green">findOne</code>
+</center>
 
 * Começamos criando o export e o inicio do middleware do Método findOne:
 
@@ -154,7 +156,10 @@ exports.findOne = (request,response,next) => {
 ```
 ---
 
-<h6>findAll</h6>
+<center>
+    <code style="color: green">findAll</code>
+</center>
+
 
 * Para esse Middleware iremos implementar junto uma **Paginação**.
   * **Paginação** nos ajuda a pegar um numero de dados por vez, de vez de pegar todos os dados de uma única vez, que se for muitos dados de uma única vez pode prejudicar nosso banco de dados ou demorar demais para apresentar os dados para podermos verificar, sendo uma boa idéia para um projeto com muitos dados.
@@ -306,7 +311,10 @@ exports.findAll = (request,response,next) => {
 
 ---
 
-<h6>create</h6>
+<center>
+    <code style="color: cyan">create</code>
+</center>
+
 
 * Este Método ele é bem interessante e peculiar, porque com ele iremos criar um novo cliente e para isso nós iremos pegar um JSON com os dados necessários para criar um novo Cliente.
 * Como estamos usando o Postman para fazer as Requisições, ele vai nos ajudar a construir e enviar para a Requisição os dados, como no GIF abaixo de exemplo:
@@ -378,7 +386,10 @@ exports.create = (request,response,next) => {
 
 ---
 
-<h6>update</h6>
+<center>
+    <code style="color: gold">update</code>
+</center>
+
 
 * O Middleware do Update também trabalha com JSON como o create, mas na hora de fazer a requisição é passado o ID do dado que deseja modificar, sendo esse a grande diferença, porque ele vai ter que pegar o dado com o id determinado como parâmetro na requisição e dai pegar os dados novos que foram adicionados pelo _body_.
 * Vamos então com a estrutura base do Middleware:
@@ -511,7 +522,10 @@ exports.update = (request,response,next) => {
 
 ---
 
-<h6>delete</h6>
+<center>
+    <code style="color: red">delete</code>
+</center>
+
 
 * Agora estamos no ultimo Método de um Controller, que serve para deletarmos um dado do nosso Banco de dados.
 * Este Middleware é bem simples, onde a primeira coisa que se tem que fazer é construir o Template dele:
@@ -588,4 +602,4 @@ exports.delete = (request,response,next) => {
 
 --- 
 
-## Próximo passo: Lidando com os Erros
+## Próximo passo: Criando as Rotas
