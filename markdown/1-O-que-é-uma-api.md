@@ -6,6 +6,7 @@
 4. [Baixando e Configurando o Express](3-Configurando-Express.md).
 5. [Configurando o Sequelize para o Banco de Dados](4-Configurando-Banco-de-Dados.md).
 6. [Criando um Model](5-Criando-um-Model.md).
+7. [Criando um Controller](6-Criando-um-Controller.md).
 
 ---
 
