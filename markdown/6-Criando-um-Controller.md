@@ -147,7 +147,7 @@ exports.findOne = (request,response,next) => {
         if(client){
             response.send(client);
         }else{
-            response.status(404).send(`Cliente with ID ${id} not Found!`);
+            response.status(404).send(`Client with ID ${id} not Found!`);
         }
     }).catch(error => next(error));
 };
@@ -311,4 +311,281 @@ exports.findAll = (request,response,next) => {
 * Este Método ele é bem interessante e peculiar, porque com ele iremos criar um novo cliente e para isso nós iremos pegar um JSON com os dados necessários para criar um novo Cliente.
 * Como estamos usando o Postman para fazer as Requisições, ele vai nos ajudar a construir e enviar para a Requisição os dados, como no GIF abaixo de exemplo:
 
-<img src="">
+<img src="../images/postman/json-entry-example.gif">
+
+* Mas vamos começar pelo inicio, a estrutura base do Middleware:
+
+```javascript
+exports.create = (request,response,next) => {
+    //...
+};
+```
+
+* como visto no GIF, iremos escrever as informações em formato JSON e fazer essa Requisição com esses dados, portanto devemos ter como conseguir capturar esses dados, onde iremos utilizar essas constantes:
+
+```javascript
+exports.create = (request,response,next) => {
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+    //...
+};
+```
+* como mostrado acima, iremos pegar do _body_ da requisição os dados que foram entrados como JSON pelo _request_.
+* E agora, iremos pegar esses dados que foram entrados e utilizar a Função `create()` do Sequelize para criarmos um novo dado para o nosso banco de dados, onde iremos adicionar essas constantes em um novo Objeto Javascript:
+
+```javascript
+exports.create = (request,response,next) => {
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+    
+    Clients.create({
+        name: bodyName,
+        password: bodyPassword,
+        access: bodyAccess,
+        createdAt: bodyCreatedAt,
+        updateAt: bodyUpdateAt
+    })
+};
+```
+
+* E por fim, utilizar a Função `then()` e enviar o código 201 que significa que deu OK e os dados foram armazenados no Banco de dados, além do `catch()`:
+
+```javascript
+exports.create = (request,response,next) => {
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+    
+    Clients.create({
+        name: bodyName,
+        password: bodyPassword,
+        access: bodyAccess,
+        createdAt: bodyCreatedAt,
+        updateAt: bodyUpdateAt
+    }).then(() => {
+        response.status(201).send("Client created!");
+    }).catch(error => next(error))
+};
+```
+
+---
+
+<h6>update</h6>
+
+* O Middleware do Update também trabalha com JSON como o create, mas na hora de fazer a requisição é passado o ID do dado que deseja modificar, sendo esse a grande diferença, porque ele vai ter que pegar o dado com o id determinado como parâmetro na requisição e dai pegar os dados novos que foram adicionados pelo _body_.
+* Vamos então com a estrutura base do Middleware:
+
+```javascript
+exports.update = (request,response,next) => {
+    //...
+};
+```
+
+* Devemos então agora criar uma constante pegando o ID passado como parâmetro, como foi feito por exemplo no Middleware `findOne`:
+
+```javascript
+exports.update = (request,response,next) => {
+    const id = request.params.id;
+    //...
+};
+```
+
+* E agora pegar os atributos que foram passados pelo JSON, como havia sido feito no `create`:
+
+```javascript
+exports.update = (request,response,next) => {
+    const id = request.params.id;
+    
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+
+    //...
+};
+```
+
+* Bom, agora que temos os dados necessários, iremos utilizar 2 Funções do Sequelize para fazer um Update, onde a primeira ja foi usada pelo `findOne`, que é a Função `findById()` com os seus defidos `then()` e `catch()`:
+
+```javascript
+exports.update = (request,response,next) => {
+    const id = request.params.id;
+    
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+
+    Clients.findById(id).then(client => {
+        if(client){
+            //...
+        }else{
+            response.status(404).send(`Client with ID ${id} not Found!`);
+        }
+    }).catch(error => next(error));
+};
+```
+
+* Agora que verificamos se o Cliente com o ID passado por parâmetro existe, iremos então fazer o Update dele, dentro do if apresentado acima, onde agora vamos usar a nova Função `update()` do Sequelize:
+
+```javascript
+exports.update = (request,response,next) => {
+    const id = request.params.id;
+    
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+
+    Clients.findById(id).then(client => {
+        if(client){
+            Clients.update(
+                {
+                    name: bodyName,
+                    password: bodyPassword,
+                    access: bodyAccess,
+                    createdAt: bodyCreatedAt,
+                    updateAt: bodyUpdateAt
+                },
+                {
+                    where: {id: id}
+                }
+            )
+        }else{
+            response.status(404).send(`Client with ID ${id} not Found!`);
+        }
+    }).catch(error => next(error));
+};
+```
+
+* o `where` dentro da Função `update()` do Sequelize vai nos ajudar a determinar qual o Cliente que queremos atualizar, onde passamos o ID que pegamos do Parâmetro.
+* Agora então falta o `then()` do Promise, onde iremos usar uma Arrow Function vazia para somente enviar que o Cliente foi atualizado com sucesso e um `catch()` caso dê erro:
+
+```javascript
+exports.update = (request,response,next) => {
+    const id = request.params.id;
+    
+    const bodyName = request.body.name;
+    const bodyPassword = request.body.password;
+    const bodyAccess = request.body.access;
+    const bodyCreatedAt = request.body.createdAt;
+    const bodyUpdateAt = request.body.updateAt;
+
+    Clients.findById(id).then(client => {
+        if(client){
+            Clients.update(
+                {
+                    name: bodyName,
+                    password: bodyPassword,
+                    access: bodyAccess,
+                    createdAt: bodyCreatedAt,
+                    updateAt: bodyUpdateAt
+                },
+                {
+                    where: {id: id}
+                }
+            ).then(() => {
+                response.status(200).send(`Client with ID ${id} Updated!`);
+            }).catch(error => next(error));
+        }else{
+            response.status(404).send(`Client with ID ${id} not Found!`);
+        }
+    }).catch(error => next(error));
+};
+```
+
+**OBS**: iremos passar para a Função `update()` no primeiro parâmetro(que acima são os atributos do JSON) **SOMENTE OS DADOS NOVOS MODIFICADOS** onde quando estivermos colocando no JSON pelo Postman só iremos colocar aqueles que queremos modificar.
+
+**OBS2**: o Status 200 é padrão, por isso se não quiser não precisa colocar ele, mas deixei para deixar um padrão de Status ja sendo usados.
+
+---
+
+<h6>delete</h6>
+
+* Agora estamos no ultimo Método de um Controller, que serve para deletarmos um dado do nosso Banco de dados.
+* Este Middleware é bem simples, onde a primeira coisa que se tem que fazer é construir o Template dele:
+
+```javascript
+exports.delete = (request,response,next) => {
+    //...
+};
+```
+
+* Para deletarmos um dado do banco de dados, iremos encontrar ele utilizando o ID passado como parâmetro na requisição, que é esse ID que vai nos ajudar a encontrar e deletar o cliente específico, para isso precisamos criar a constante para pegar o ID de entrada:
+
+```javascript
+exports.delete = (request,response,next) => {
+    const id = request.params.id;
+    //...
+};
+```
+
+* Agora, como foi feito no Middleware `findOne` e `update`, temos que usar a Função `findById()` do Sequelize:
+
+```javascript
+exports.delete = (request,response,next) => {
+    const id = request.params.id;
+    
+    Clients.findById(id).then(client => {
+        if(client){
+            //...
+        }else{
+            response.status(404).send(`Client with ID ${id} not Found!`);
+        }
+    }).catch(error => next(error));
+};
+```
+
+* Neste momento, iremos utilizar uma nova Função do Sequelize chamada `destroy()` onde a única coisa que essa Função necessita é saber o ID do cliente que queremos deletar, onde iremos usar o `where` que utilizamos no update como parâmetro:
+
+```javascript
+exports.delete = (request,response,next) => {
+    const id = request.params.id;
+    
+    Clients.findById(id).then(client => {
+        if(client){
+            Clients.destroy({
+                where: {id: id}
+            })
+        }else{
+            response.status(404).send(`Client with ID ${id} not Found!`);
+        }
+    }).catch(error => next(error));
+};
+```
+* E por fim, o `then()` enviando a mensagem que deletou e o `catch()` caso de algum erro:
+
+```javascript
+exports.delete = (request,response,next) => {
+    const id = request.params.id;
+    
+    Clients.findById(id).then(client => {
+        if(client){
+            Clients.destroy({
+                where: {id: id}
+            }).then(() => {
+                response.status(200).send(`Client with ID ${id} Deleted!`);
+            }).catch(error => next(error));
+        }else{
+            response.status(404).send(`Client with ID ${id} not Found!`);
+        }
+    }).catch(error => next(error));
+};
+```
+* Pronto, temos agora o nosso **CRUD** com os Middlewares necessários para acessar e modificar o Banco de dados interagindo com os _requests_ e os _responses_ de cada Método.
+* Todos os Métodos desse Controller se encontram no Arquivo _src/api/controllers/clientsController.js_
+
+--- 
+
+## Próximo passo: Lidando com os Erros
