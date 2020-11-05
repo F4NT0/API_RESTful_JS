@@ -30,8 +30,8 @@ Programa|Descrição|Informação sobre|Extra|
 `Nodejs`|Ambiente de Execução de Programas em Javascript|[Documentação](markdown/nodejs.md)|
 `Express`|Framework Minimalista que gerencia Requisições HTTP|[Documentação](markdown/express.md)|
 `Sequelize`|Mapeador de Objetos Relacionais (ORM) onde transforma tabelas do banco de dados em Classes|[Documentação](markdown/sequelize.md)|
-`Nodemon`|Atualizador automatico do Nodejs|Instalação: `npm intall -g nodemon`|
-`cli-color`|Para colorir a saida do Terminal|Instalação: `npm install cli-color`|
+`Nodemon`|Atualizador automatico do Nodejs|_npm intall -g nodemon_|
+`cli-color`|Para colorir a saida do Terminal|_npm install cli-color_|
 `MySQL`|SGBD Relacional escolhido|[Documentação](markdown/mysql.md)|
 `JSON`|Javascript Object Notation|[Documentação](markdown/json.md)|
 
