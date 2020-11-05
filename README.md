@@ -26,6 +26,7 @@ src/
 4. [Configurando o Sequelize para o Banco de Dados](markdown/4-Configurando-Banco-de-Dados.md).
 5. [Criando um Model](markdown/5-Criando-um-Model.md).
 6. [Criando um Controller](markdown/6-Criando-um-Controller.md).
+7. [Criando um Route](markdown/7-Criando-um-Route.md).
 
 ### Programas utilizados e como instalar
 
