@@ -1,6 +1,7 @@
 # Estrutura Básica de uma API RESTful detalhada
 
 ![](https://img.shields.io/badge/Express-4.17.1-brightgreen)|![](https://img.shields.io/badge/mysql2-2.2.5-blueviolet)|![](https://img.shields.io/badge/sequelize-6.3.5-blue)
+|---|---|---|
 
 ### Estrutura de Diretórios
 
