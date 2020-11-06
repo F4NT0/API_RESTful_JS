@@ -20,9 +20,6 @@ const Clients = sequelize.define("clients",{
         type: Sequelize.STRING(40),
         validate:{
             notEmpty: true,
-            isDecimal: true,
-            isLowercase: true,
-            isUppercase: true,
             notNull: true,
             len: [5,40]
         }

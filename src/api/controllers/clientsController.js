@@ -3,7 +3,7 @@ const Clients = require("../models/clientsModel");
 exports.findOne = (request,response,next) => {
     const id = request.params.id;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             response.send(client);
         }else{
@@ -43,7 +43,7 @@ exports.create = (request,response,next) => {
         password: password,
         access: access,
     }).then(() => {
-        response.status(201).send();
+        response.status(201).send("Client created!");
     }).catch(error => next(error));
 };
 
@@ -54,7 +54,7 @@ exports.update = (request,response,next) => {
     const password = request.body.password;
     const access = request.body.access;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             Clients.update(
                 {
@@ -77,7 +77,7 @@ exports.update = (request,response,next) => {
 exports.delete = (request,response,next) => {
     const id = request.params.id;
     
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             Clients.destroy({
                 where: {id: id}

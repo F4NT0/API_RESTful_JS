@@ -96,7 +96,7 @@ exports.findOne = (request,response,next) => {
 
 * Agora que temos o ID, vamos utilizar o nosso Model importado para procurar esse cliente.
 * O Sequelize quando criamos o nosso modelo **Clients** ele já possui Funções para nos ajudar a fazer as requisições no banco de dados.
-* A Função que iremos usar nesse Middleware vai ser o `findById()` que iremos passar como Parâmetro o ID recebido do Request e salvo na constante id:
+* A Função que iremos usar nesse Middleware vai ser o `findByPk()` que iremos passar como Parâmetro o ID recebido do Request e salvo na constante id:
 
 ```javascript
 // o Import
@@ -106,10 +106,10 @@ exports.findOne = (request,response,next) => {
     const id = request.params.id;
 
     // Utilizando a Função findById
-    Clients.findById(id)
+    Clients.findByPk(id)
 };
 ```
-* A função `findById()` vai nos retornar uma **Promise**:
+* A função `findByPk()` vai nos retornar uma **Promise**:
   * **Promise** = é um objeto usado para processamento assíncrono. Um Promise (de promessa) representa um valor que pode estar disponível agora, no futuro ou nunca, portanto devemos tratar essa Promise dependendo do que for retornado.
 * Como ele é uma Promise, **Devemos tratar esse processo Assíncrono** onde podemos usar as seguintes Funções:
 
@@ -128,7 +128,7 @@ Método `catch()` = É onde registramos o que queremos que aconteça quando a Pr
 exports.findOne = (request,response,next) => {
     const id = request.params.id;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             response.send(client);
         }else{
@@ -149,7 +149,7 @@ exports.findOne = (request,response,next) => {
 exports.findOne = (request,response,next) => {
     const id = request.params.id;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             response.send(client);
         }else{
@@ -417,7 +417,7 @@ exports.update = (request,response,next) => {
 };
 ```
 
-* Bom, agora que temos os dados necessários, iremos utilizar 2 Funções do Sequelize para fazer um Update, onde a primeira ja foi usada pelo `findOne`, que é a Função `findById()` com os seus defidos `then()` e `catch()`:
+* Bom, agora que temos os dados necessários, iremos utilizar 2 Funções do Sequelize para fazer um Update, onde a primeira ja foi usada pelo `findOne`, que é a Função `findByPk()` com os seus defidos `then()` e `catch()`:
 
 ```javascript
 exports.update = (request,response,next) => {
@@ -427,7 +427,7 @@ exports.update = (request,response,next) => {
     const password = request.body.password;
     const access = request.body.access;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             //...
         }else{
@@ -447,7 +447,7 @@ exports.update = (request,response,next) => {
     const password = request.body.password;
     const access = request.body.access;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             Clients.update(
                 {
@@ -477,7 +477,7 @@ exports.update = (request,response,next) => {
     const password = request.body.password;
     const access = request.body.access;
 
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             Clients.update(
                 {
@@ -527,13 +527,13 @@ exports.delete = (request,response,next) => {
 };
 ```
 
-* Agora, como foi feito no Middleware `findOne` e `update`, temos que usar a Função `findById()` do Sequelize:
+* Agora, como foi feito no Middleware `findOne` e `update`, temos que usar a Função `findByPk()` do Sequelize:
 
 ```javascript
 exports.delete = (request,response,next) => {
     const id = request.params.id;
     
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             //...
         }else{
@@ -549,7 +549,7 @@ exports.delete = (request,response,next) => {
 exports.delete = (request,response,next) => {
     const id = request.params.id;
     
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             Clients.destroy({
                 where: {id: id}
@@ -566,7 +566,7 @@ exports.delete = (request,response,next) => {
 exports.delete = (request,response,next) => {
     const id = request.params.id;
     
-    Clients.findById(id).then(client => {
+    Clients.findByPk(id).then(client => {
         if(client){
             Clients.destroy({
                 where: {id: id}

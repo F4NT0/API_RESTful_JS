@@ -11,6 +11,6 @@ router.post('/clients',controller.create);
 
 router.put('/clients/:id',controller.update);
 
-router.delete('clients/:id', controller.delete);
+router.delete('/clients/:id', controller.delete);
 
 module.exports = router;

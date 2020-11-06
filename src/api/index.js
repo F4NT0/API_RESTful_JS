@@ -2,9 +2,12 @@ const http = require("http");
 const express = require("express");
 const clientsRoute = require("./routes/clientsRoute");
 const sequelize = require("./database/database");
+const bodyParser = require("body-parser");
 
 const app = express();
 app.set(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api",clientsRoute);
 
