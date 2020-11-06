@@ -32,41 +32,35 @@ exports.findAll = (request,response,next) => {
 };
 
 exports.create = (request,response,next) => {
-    const bodyName = request.body.name;
-    const bodyPassword = request.body.password;
-    const bodyAccess = request.body.access;
-    const bodyCreatedAt = request.body.createdAt;
-    const bodyUpdateAt = request.body.updateAt;
-    
+    const id = request.body.id;
+    const name = request.body.name;
+    const password = request.body.password;
+    const access = request.body.access;
+
     Clients.create({
-        name: bodyName,
-        password: bodyPassword,
-        access: bodyAccess,
-        createdAt: bodyCreatedAt,
-        updateAt: bodyUpdateAt
+        id: id,
+        name: name,
+        password: password,
+        access: access,
     }).then(() => {
         response.status(201).send();
-    }).catch(error => next(error))
+    }).catch(error => next(error));
 };
 
 exports.update = (request,response,next) => {
     const id = request.params.id;
     
-    const bodyName = request.body.name;
-    const bodyPassword = request.body.password;
-    const bodyAccess = request.body.access;
-    const bodyCreatedAt = request.body.createdAt;
-    const bodyUpdateAt = request.body.updateAt;
+    const name = request.body.name;
+    const password = request.body.password;
+    const access = request.body.access;
 
     Clients.findById(id).then(client => {
         if(client){
             Clients.update(
                 {
-                    name: bodyName,
-                    password: bodyPassword,
-                    access: bodyAccess,
-                    createdAt: bodyCreatedAt,
-                    updateAt: bodyUpdateAt
+                    name: name,
+                    password: password,
+                    access: access,
                 },
                 {
                     where: {id: id}

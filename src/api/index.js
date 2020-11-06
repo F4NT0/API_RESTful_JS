@@ -19,5 +19,7 @@ sequelize.sync({force: true}).then(() => {
     
     const server = http.createServer(app);
     
-    server.listen(port);
+    server.listen(port, () => {
+        console.log(`Server Running at http://localhost:${port}/`);
+    });
 });

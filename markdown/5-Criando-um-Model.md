@@ -34,8 +34,6 @@ ID do cliente|NUMERIC
 Nome do Cliente|VARCHAR
 Senha de Acesso|VARCHAR
 Tipo de Cliente|CHAR
-Data de Criação|DATE
-Data de Modificação|DATE
 
 ### Importando o Necessário
 
@@ -161,31 +159,7 @@ access: {
 'S' ou 'A' ou 'V'
 ```
 
-* O quinto é a **Data de Criação**:
 
-```javascript
-createdAt: {
-    allowNull: true,
-    type: Sequelize.DATE
-}
-```
-
-* O tipo vai ser uma Data no Formato UTC: YYYY-MM-DD hh-mm-ss
-  * Y = Ano
-  * M = Mês
-  * D = Dia
-  * h = Hora
-  * m = Minuto
-  * s = Segundo
-
-* O sexto é a **Data de Atualização**:
-
-```javascript
-updateAt: {
-    allowNull: true,
-    type: Sequelize.DATE
-}
-```
 
 **Exportando o Model**
 
@@ -232,20 +206,13 @@ const Clients = sequelize.define("clients",{
     access: {
         allowNull: false,
         type: Sequelize.CHAR
-    },
-    createdAt: {
-        allowNull: true,
-        type: Sequelize.DATE
-    },
-    updateAt:{
-        allowNull: true,
-        type: Sequelize.DATE
     }
-
 });
 
 module.exports = Clients;
 ```
+
+* Quando for rodar o e o Sequelize criar essa Tabela, ele vai criar mais duas colunas chamadas _createdAt_ e _updatedAt_ que vão mostrar quando foi criado ou alterado um dado do banco de dados. 
 
 # PRÓXIMO PASSO
 

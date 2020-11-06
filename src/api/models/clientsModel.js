@@ -30,14 +30,6 @@ const Clients = sequelize.define("clients",{
     access: {
         allowNull: false,
         type: Sequelize.CHAR
-    },
-    createdAt: {
-        allowNull: true,
-        type: Sequelize.DATE
-    },
-    updateAt:{
-        allowNull: true,
-        type: Sequelize.DATE
     }
 
 });
