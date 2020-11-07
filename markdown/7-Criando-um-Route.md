@@ -42,10 +42,10 @@ Existem 4 Tipos de Requisições HTTP que serão usados, onde utilizam verbos es
 
 Requisição|Explicação
 |---|---|
-<img src="../../images/postman/get-postman.png" width="100"> |GET serve para pegarmos informações de uma Rota
-<img src="../../images/postman/post-postman.png" width="100">|POST serve para publicarmos informações por uma Rota
-<img src="../../images/postman/put-postman.png" width="100">|PUT serve para atualizarmos informações de um dado a partir de um ID por exemplo
-<img src="../../images/postman/delete-postman.png" width="100">|DELETE serve para deletarmos um dado por uma Rota específica, onde iremos passar um Parâmetro por exemplo.
+<img src="../images/postman/get-postman.png" width="100"> |GET serve para pegarmos informações de uma Rota
+<img src="../images/postman/post-postman.png" width="100">|POST serve para publicarmos informações por uma Rota
+<img src="../images/postman/put-postman.png" width="100">|PUT serve para atualizarmos informações de um dado a partir de um ID por exemplo
+<img src="../images/postman/delete-postman.png" width="100">|DELETE serve para deletarmos um dado por uma Rota específica, onde iremos passar um Parâmetro por exemplo.
 
 Agora, utilizando as Funções do Express `get()` , `post()` , `put()` e `delete()` que foram possiveis de usar na constante _router_ que foi inicializado graças a Função `Router()`.
 
