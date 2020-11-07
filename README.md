@@ -1,9 +1,9 @@
 # Estrutura Básica de uma API RESTful detalhada
 
-![](https://img.shields.io/badge/Express-4.17.1-brightgreen)|![](https://img.shields.io/badge/mysql2-2.2.5-blueviolet)|![](https://img.shields.io/badge/sequelize-6.3.5-blue)
-|---|---|---|
+![](https://img.shields.io/badge/Express-4.17.1-brightgreen) <br> ![](https://img.shields.io/badge/mysql2-2.2.5-blueviolet) <br> ![](https://img.shields.io/badge/sequelize-6.3.5-blue) <br> ![](https://img.shields.io/badge/body--parser-1.19.0-ff69b4)
 
-### Estrutura de Diretórios
+
+### Estrutura de Diretórios Principais
 
 ```text
 src/
@@ -15,6 +15,7 @@ src/
  | ⟶ postman/
 ```
 
+---
 
 ### Como Estudar
 
@@ -27,6 +28,20 @@ src/
 5. [Criando um Model](markdown/5-Criando-um-Model.md).
 6. [Criando um Controller](markdown/6-Criando-um-Controller.md).
 7. [Criando um Route](markdown/7-Criando-um-Route.md).
+8. [Tratamento de Erros](markdown/8-Tratamento-de-Erros-Globais.md).
+9. [Conectando o Banco de dados](markdown/9-Conectando-Banco-de-Dados.md).
+10. [Testando a API com Postman](markdown/10-Testando-a-API.md).
+
+* Conteúdos Extras
+
+1. [O que é Express](markdown/express.md).
+2. [O que é JSON](markdown/json.md).
+3. [O que é MySQL](markdown/mysql.md).
+4. [O que é Nodejs](markdown/nodejs.md).
+5. [O que é Postman](markdown/postman.md).
+6. [O que é Sequelize](markdown/sequelize.md).
+
+---
 
 ### Programas utilizados e como instalar
 
@@ -39,6 +54,8 @@ Programa|Descrição|Informação sobre|Extra|
 `MySQL`|SGBD Relacional escolhido|[Documentação](markdown/mysql.md)|
 `JSON`|Javascript Object Notation|[Documentação](markdown/json.md)|
 `Nodemon`||
+
+---
 
 ### Estruturação dos Programas
 
